@@ -7,6 +7,8 @@ if (!isJsonable(data)) {
   throw new TypeError('data is not JSON friendly');
 }
 
+localStorage.clear();
+
 Object.keys(data).forEach(key =>
   localStorage.setItem(key, JSON.stringify(data[key]))
 );
